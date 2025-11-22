@@ -86,13 +86,13 @@ _paginate: skip
 
 ---
 
-# Définition software
+# Définition hardware
 
 ## En informatique, le hardware (matériel) désigne l’ensemble des éléments physiques (qu’on peut toucher et manipuler) qui forment un ordinateur, ou y-sont reliés.
 
 ---
 
-# Définition hardware
+# Définition software
 
 ## En informatique, le software (logiciel) désigne l’ensemble des programmes (qu’on ne peut pas toucher) qui permettent à un ordinateur de fonctionner et d’exécuter des tâches.
 

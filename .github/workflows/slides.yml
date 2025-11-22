@@ -1,0 +1,53 @@
+name: Generate Slides and Publish to GitHub Pages
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code.
+        uses: actions/checkout@v4
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: npm
+          node-version: '20.11.1'
+      - name: Install dependencies
+        run: npm ci
+      - name: Set environment var to avoid timeout on build
+        run: |
+          echo "CHROME_NO_SANDBOX=1" >> $GITHUB_ENV
+          echo "PUPPETEER_TIMEOUT=0" >> $GITHUB_ENV
+      - name: Build Marp slide deck
+        run: CHROME_PATH=$(npx -y @puppeteer/browsers@latest install chrome@stable --path $(realpath ./tmp) | awk '{print $2}') npm run build:htmlpdf
+      - name: Stage changed files.
+        run: |
+          mv dist/slides.html dist/index.html
+      - name: Copy assets
+        run: cp -r src/assets dist/
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'dist'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

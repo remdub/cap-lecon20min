@@ -1,0 +1,1 @@
+# Distinguer hardware de software

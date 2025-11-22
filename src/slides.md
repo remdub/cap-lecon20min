@@ -81,19 +81,19 @@ _paginate: skip
 
 # Classer les cartes en 2 catégories
 
-## 1. Les éléments qu'on peut toucher (les éléments physiques)
-## 2. Les éléments qu’on ne peut pas toucher (les éléments immatériels).
+## 1. Les éléments qu'on peut prendre en main (les éléments physiques)
+## 2. Les éléments qu’on ne peut pas prendre en main (les éléments immatériels).
 
 ---
 
 # Définition hardware
 
-## En informatique, le hardware (matériel) désigne l’ensemble des éléments physiques (qu’on peut toucher et manipuler) qui forment un ordinateur, ou y-sont reliés.
+## En informatique, le hardware (matériel) désigne l’ensemble des éléments physiques (qu’on peut prendre en main et manipuler) qui forment un ordinateur, ou y-sont reliés.
 
 ---
 
 # Définition software
 
-## En informatique, le software (logiciel) désigne l’ensemble des programmes (qu’on ne peut pas toucher) qui permettent à un ordinateur de fonctionner et d’exécuter des tâches.
+## En informatique, le software (logiciel) désigne l’ensemble des programmes (qu’on ne peut pas prendre en main) qui permettent à un ordinateur de fonctionner et d’exécuter des tâches.
 
 <!-- END -->
